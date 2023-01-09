@@ -263,7 +263,14 @@ def main():
         print('\nExport of Excel have started.')
         df1.to_excel(writer, sheet_name="DF", index=False)
         writer.save()
-        
+     
+    right.download_button(
+        "⬇️ Download OUTPUT",
+        data=df1,
+        file_name="Invoice_"+time_str + '_' + selection_name + '.xlsx',
+        mime="application/octet-stream",
+    )
+    
     st.sidebar.subheader('Show Graph')
     if st.sidebar.checkbox('Histogram for Groups', False):
         st.markdown('## Actual Sums by Groups')
