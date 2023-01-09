@@ -254,7 +254,7 @@ def main():
     
     st.sidebar.subheader('With Selection Generate Output')
     time_str=time.strftime("%Y_%m_%d_%H%M")
-    right.download_button(
+    st.sidebar.download_button(
     "⬇️ Download OUTPUT",
     data=df1,
     file_name="Invoice_"+time_str + '_' + selection_name + '.xlsx',
