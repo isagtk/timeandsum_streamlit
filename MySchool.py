@@ -250,6 +250,7 @@ def main():
     
     
     st.sidebar.subheader('With Selection Generate Output')
+    st.sidebar.markdown(selection_name)
     time_str=time.strftime("%Y_%m_%d_%H%M")
     filename="Invoice_"+time_str + '_' + selection_name + '.xlsx'
 
