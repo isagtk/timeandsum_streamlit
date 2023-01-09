@@ -254,13 +254,8 @@ def main():
     
     st.sidebar.subheader('With Selection Generate Output')
     time_str=time.strftime("%Y_%m_%d_%H%M")
-    st.sidebar.button("Submit",
-                      data=df1,
-                      file_name="Invoice_"+time_str + '_' + selection_name + '.xlsx',
-                      mime="application/octet-stream",
-                     )  
-                      
-    '''
+    if st.sidebar.button("Submit"):  
+
         filename="Invoice_"+time_str + '_' + selection_name + '.xlsx'
         #writer=pd.ExcelWriter(filename, engine='xlsxwriter')
         writer=pd.ExcelWriter(filename)
@@ -268,7 +263,6 @@ def main():
         print('\nExport of Excel have started.')
         df1.to_excel(writer, sheet_name="DF", index=False)
         writer.save()
-    '''
         
     st.sidebar.subheader('Show Graph')
     if st.sidebar.checkbox('Histogram for Groups', False):
