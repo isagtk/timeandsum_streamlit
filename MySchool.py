@@ -254,6 +254,14 @@ def main():
     
     st.sidebar.subheader('With Selection Generate Output')
     time_str=time.strftime("%Y_%m_%d_%H%M")
+    right.download_button(
+    "⬇️ Download OUTPUT",
+    data=df1,
+    file_name="Invoice_"+time_str + '_' + selection_name + '.xlsx',
+    mime="application/octet-stream",
+    )
+    
+    
     if st.sidebar.button("Submit"):  
 
         filename="Invoice_"+time_str + '_' + selection_name + '.xlsx'
@@ -264,12 +272,7 @@ def main():
         df1.to_excel(writer, sheet_name="DF", index=False)
         writer.save()
      
-    right.download_button(
-        "⬇️ Download OUTPUT",
-        data=df1,
-        file_name="Invoice_"+time_str + '_' + selection_name + '.xlsx',
-        mime="application/octet-stream",
-    )
+
     
     st.sidebar.subheader('Show Graph')
     if st.sidebar.checkbox('Histogram for Groups', False):
