@@ -254,13 +254,6 @@ def main():
     
     st.sidebar.subheader('With Selection Generate Output')
     time_str=time.strftime("%Y_%m_%d_%H%M")
-    st.sidebar.download_button(
-    label="⬇️ Download OUTPUT",
-    data=df1,
-    file_name="Invoice_"+time_str + '_' + selection_name + '.xlsx',
-    mime="application/vnd.ms-excel",
-    )
-
     
     if st.sidebar.button("Submit"):  
 
