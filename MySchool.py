@@ -16,6 +16,8 @@ from datetime import timedelta
 from datetime import datetime as dt
 import csv
 import plotly.express as px
+import io
+
 global uploaded_file
 
 class MySchool():
@@ -25,7 +27,6 @@ class MySchool():
         self.selection_group=""
         
         self.add_info(uploaded_file)
-        
         
         
     @st.cache(persist=True)    
@@ -170,10 +171,6 @@ class MySchool():
         return df
 
 
-        
-
-
-
     
 #ToRun=MySchool()     
 
@@ -254,18 +251,29 @@ def main():
     
     st.sidebar.subheader('With Selection Generate Output')
     time_str=time.strftime("%Y_%m_%d_%H%M")
+    filename="Invoice_"+time_str + '_' + selection_name + '.xlsx'
     
+    '''
     if st.sidebar.button("Submit"):  
-
-        filename="Invoice_"+time_str + '_' + selection_name + '.xlsx'
         #writer=pd.ExcelWriter(filename, engine='xlsxwriter')
         writer=pd.ExcelWriter(filename)
         start_time=time.time()
         print('\nExport of Excel have started.')
         df1.to_excel(writer, sheet_name="DF", index=False)
         writer.save()
-     
-
+     '''
+    buffer = io.BytesIO()    
+    with pd.ExcelWriter(buffer, engine="xlsxwriter") as writer:
+        df1.to_excel(writer, sheet_name=selection_name, index=False)
+        writer.save()
+        
+        st.sidebar.download_button(
+            label="Download Excel Output",
+            data=buffer,
+            file_name=filename,
+            mime="application/vnd.ms-excel",
+            )
+        
     
     st.sidebar.subheader('Show Graph')
     if st.sidebar.checkbox('Histogram for Groups', False):
