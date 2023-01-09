@@ -258,7 +258,7 @@ def main():
     "⬇️ Download OUTPUT",
     data=df1,
     file_name="Invoice_"+time_str + '_' + selection_name + '.xlsx',
-    mime="application/octet-stream",
+    mime="application/vnd.ms-excel",
     )
     
     
