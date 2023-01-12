@@ -180,7 +180,15 @@ def main():
     st.title("My School ☀️")
 
     #======================
-    uploaded_file = st.file_uploader("Data for Analysis <<MYDF1.xlsx>>", type='xlsx', accept_multiple_files=False, key=None, help=None, on_change=None, args=None, kwargs=None, disabled=False, label_visibility="visible")
+    st.title("Upload data from")
+    page_radionames=['URL', 'Local file')
+    page=st.radio('Upload', page_radionames)
+    if page='URL':
+           
+           uploaded_file=st.text_input(label = "Please enter tURL", default)          
+    else:
+           uploaded_file = st.file_uploader("Data for Analysis <<MYDF1.xlsx>>", type='xlsx', accept_multiple_files=False, key=None, help=None, on_change=None, args=None, kwargs=None, disabled=False, label_visibility="visible")
+    
     if uploaded_file is not None:
            file_container2 = st.expander("The file must have: sheet <<Data>> and sheet <<Info>>. Check your uploaded .xlsx")
            shows = pd.read_excel(uploaded_file)
