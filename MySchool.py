@@ -187,7 +187,7 @@ def main():
     
     if page=='URL':
            
-           uploaded_file=st.text_input(label = "Please enter tURL", default)          
+           uploaded_file=st.text_input(label = "Please enter URL", default='In progress')          
     else:
            uploaded_file = st.file_uploader("Data for Analysis <<MYDF1.xlsx>>", type='xlsx', accept_multiple_files=False, key=None, help=None, on_change=None, args=None, kwargs=None, disabled=False, label_visibility="visible")
     
