@@ -182,7 +182,7 @@ def main():
     #======================
     st.markdown("Upload data from")
     page_radionames=['URL', 'Local file']
-    page=st.radio('Upload', page_radionames, index=2)
+    page=st.radio('Upload', page_radionames, index=1)
     
     
     if page=='URL':
