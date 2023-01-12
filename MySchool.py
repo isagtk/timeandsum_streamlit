@@ -181,11 +181,11 @@ def main():
 
     #======================
     st.markdown("Upload data from")
-    page_radionames=['URL', 'Local file']
+    page_radionames=['URL - in progress !!!', 'Local file']
     page=st.radio('Input', page_radionames, index=1)
     
     
-    if page=='URL - in progress':
+    if page=='URL - in progress!!!':
            
            uploaded_file=st.text_input(label = "Please enter URL")          
     else:
