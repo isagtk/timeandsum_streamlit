@@ -185,7 +185,7 @@ def main():
     page=st.radio('Upload', page_radionames)
     page='Local file'
     
-    if page='URL':
+    if page=='URL':
            
            uploaded_file=st.text_input(label = "Please enter tURL", default)          
     else:
