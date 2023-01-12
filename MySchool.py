@@ -180,10 +180,10 @@ def main():
     st.title("My School ☀️")
 
     #======================
-    st.title("Upload data from")
+    st.markdown.title("Upload data from")
     page_radionames=['URL', 'Local file']
-    page=st.radio('Upload', page_radionames)
-    page='Local file'
+    page=st.radio('Upload', page_radionames, index=2)
+    
     
     if page=='URL':
            
