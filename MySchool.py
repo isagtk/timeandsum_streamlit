@@ -181,8 +181,10 @@ def main():
 
     #======================
     st.title("Upload data from")
-    page_radionames=['URL', 'Local file')
+    page_radionames=['URL', 'Local file']
     page=st.radio('Upload', page_radionames)
+    page='Local file'
+    
     if page='URL':
            
            uploaded_file=st.text_input(label = "Please enter tURL", default)          
