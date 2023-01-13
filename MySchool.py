@@ -17,6 +17,7 @@ from datetime import datetime as dt
 import csv
 import plotly.express as px
 import io
+import urlib
 
 global uploaded_file
 
@@ -186,8 +187,9 @@ def main():
     
     
     if page=='URL - in progress !!!':
-           
-           url_file=st.text_input(label = "Please enter URL")          
+           url_file=st.text_input(label = "Please enter URL") 
+           url=r+url_file
+           urllib.request.urlretrieve(url)
     else:
            uploaded_file = st.file_uploader("Data for Analysis <<MYDF1.xlsx>>", type='xlsx', accept_multiple_files=False, key=None, help=None, on_change=None, args=None, kwargs=None, disabled=False, label_visibility="visible")
     
@@ -249,10 +251,6 @@ def main():
         sum_i=df_group['Sum_Actual'].sum()
         sum_list.append(sum_i)
     group_count= pd.DataFrame({'Group':group_list,'Actual_Sum':sum_list})     
-    
-
-   
-
 
     
     #================
