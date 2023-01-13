@@ -187,7 +187,8 @@ def main():
     
     
     if page=='URL - in progress !!!':
-           url_file=st.text_input(label = "Please enter URL") 
+           url_file=st.text_input(label = "Please enter URL")
+            st.write(url_file)
            urllib.request.urlretrieve(url_file)
     else:
            uploaded_file = st.file_uploader("Data for Analysis <<MYDF1.xlsx>>", type='xlsx', accept_multiple_files=False, key=None, help=None, on_change=None, args=None, kwargs=None, disabled=False, label_visibility="visible")
