@@ -192,7 +192,7 @@ def main():
            st.write(url_file)
            webbrowser.open_new_tab(url_file)
            uploaded_file =pd.read_excel(url_file + '/Calendar 2023.xlsx') 
-           st.write(url_file + '/Calendar 2023.xlsx')
+
     else:
            uploaded_file = st.file_uploader("Data for Analysis <<MYDF1.xlsx>>", type='xlsx', accept_multiple_files=False, key=None, help=None, on_change=None, args=None, kwargs=None, disabled=False, label_visibility="visible")
     
