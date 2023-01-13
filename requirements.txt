@@ -7,3 +7,4 @@ plotly==5.10.0
 pyinstaller==5.4.1
 pyinstaller-hooks-contrib==2022.10
 openpyxl==3.0.10
+urllib3==1.26.12
