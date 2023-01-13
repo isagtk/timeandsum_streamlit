@@ -17,7 +17,7 @@ from datetime import datetime as dt
 import csv
 import plotly.express as px
 import io
-import urlib
+import urllib
 
 global uploaded_file
 
