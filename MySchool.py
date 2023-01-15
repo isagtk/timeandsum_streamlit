@@ -19,7 +19,7 @@ import plotly.express as px
 import io
 import webbrowser
 import urllib
-import html5lib
+
 
 global uploaded_file
 
