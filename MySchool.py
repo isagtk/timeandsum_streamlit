@@ -196,7 +196,7 @@ def main():
            if  url_file1 is not None:
                 df1 = pd.read_html(url_file1)
                 shows = pd.read_html(url_file1)
-                st.stop()
+                
            else:
                 st.markdown('Error')
             
