@@ -192,7 +192,7 @@ def main():
            st.write(url_file)
            #url_file='https://docs.google.com/spreadsheets/d/1PV8NqPZt0GEKVtEk2CcUX876l2qqEYwP5npbLAVk8L8/edit?usp=sharing' 
            url_file='https://github.com/users/isagtk/emails/231571369/confirm_verification/27062402?via_launch_code_email=true'
-           uploaded_file = pd.read_excel(io=url_file,  sheet_name =sheet_name)
+           uploaded_file = pd.read_html(url_file)
     else:
            uploaded_file = st.file_uploader("Data for Analysis <<MYDF1.xlsx>>", type='xlsx', accept_multiple_files=False, key=None, help=None, on_change=None, args=None, kwargs=None, disabled=False, label_visibility="visible")
     
