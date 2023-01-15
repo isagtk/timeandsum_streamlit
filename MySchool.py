@@ -189,7 +189,7 @@ def main():
     
     if page=='URL - in progress !!!':
            #url_file=st.text_input(label = "Please enter URL")
-           url='https://docs.google.com/spreadsheets/d/1PV8NqPZt0GEKVtEk2CcUX876l2qqEYwP5npbLAVk8L8/edit?usp=sharing' 
+           url_file='https://docs.google.com/spreadsheets/d/1PV8NqPZt0GEKVtEk2CcUX876l2qqEYwP5npbLAVk8L8/edit?usp=sharing' 
            st.write(url_file)
            uploaded_file = urllib.request.urlopen(url_file).read() 
     else:
