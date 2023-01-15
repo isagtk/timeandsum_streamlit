@@ -192,10 +192,11 @@ def main():
            #url_file=st.text_input(label = "Please enter URL")
            #st.write(url_file)
            #url_file='https://docs.google.com/spreadsheets/d/1PV8NqPZt0GEKVtEk2CcUX876l2qqEYwP5npbLAVk8L8/edit?usp=sharing' 
-           url_file='https://docs.google.com/spreadsheets/d/1PV8NqPZt0GEKVtEk2CcUX876l2qqEYwP5npbLAVk8L8/edit#gid=2070559139'
+           url_file1='https://docs.google.com/spreadsheets/d/1PV8NqPZt0GEKVtEk2CcUX876l2qqEYwP5npbLAVk8L8/edit#gid=2070559139'
            if  url_file is not None:
-                uploaded_file = pd.read_html(url_file)
+                df1 = pd.read_html(url_file)
                 shows = pd.read_html(url_file)
+                st.stop()
            else:
                 st.markdown('Error')
             
