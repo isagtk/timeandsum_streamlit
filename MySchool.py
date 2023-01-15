@@ -193,7 +193,7 @@ def main():
            #st.write(url_file1)
            #url_file='https://docs.google.com/spreadsheets/d/1PV8NqPZt0GEKVtEk2CcUX876l2qqEYwP5npbLAVk8L8/edit?usp=sharing' 
            url_file1='https://docs.google.com/spreadsheets/d/1PV8NqPZt0GEKVtEk2CcUX876l2qqEYwP5npbLAVk8L8/edit#gid=2070559139'
-           if  url_file is not None:
+           if  url_file1 is not None:
                 df1 = pd.read_html(url_file1)
                 shows = pd.read_html(url_file1)
                 st.stop()
