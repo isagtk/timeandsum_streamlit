@@ -196,7 +196,9 @@ def main():
            if  uploaded_file is not None:
                 uploaded_file = pd.read_html(url_file)
                 #st.dataframe(df)
-           else: 
+           else:
+                st.markdown('Error')
+            
     else:
            uploaded_file = st.file_uploader("Data for Analysis <<MYDF1.xlsx>>", type='xlsx', accept_multiple_files=False, key=None, help=None, on_change=None, args=None, kwargs=None, disabled=False, label_visibility="visible")
     
