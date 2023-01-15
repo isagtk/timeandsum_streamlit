@@ -210,8 +210,8 @@ def main():
                 file_container2.write(shows)
                 stop_info2=1
 
-            else:
-                   st.stop()
+           else:
+                st.stop()
    
             
     ndf=MySchool()
