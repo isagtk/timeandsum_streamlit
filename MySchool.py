@@ -189,8 +189,8 @@ def main():
     
     
     if page=='URL':
-           url_file=st.text_input(label = "Please enter URL")
-           st.write(url_file)
+           #url_file=st.text_input(label = "Please enter URL")
+           #st.write(url_file)
            #url_file='https://docs.google.com/spreadsheets/d/1PV8NqPZt0GEKVtEk2CcUX876l2qqEYwP5npbLAVk8L8/edit?usp=sharing' 
            url_file='https://docs.google.com/spreadsheets/d/1PV8NqPZt0GEKVtEk2CcUX876l2qqEYwP5npbLAVk8L8/edit#gid=2070559139'
            uploaded_file = pd.read_html(url_file)
