@@ -190,8 +190,8 @@ def main():
     if page=='URL':
            url_file=st.text_input(label = "Please enter URL")
            st.write(url_file)
-           excel_name=st.text_input(label = "Please enter Excel name")
-           sheet_name=st.text_input(label = "Data") 
+           excel_name=st.text_input(label = "Please enter Excel name", "Calendar_2023")
+           sheet_name=st.text_input(label = "Sheet name", "Data") 
            #url_file='https://docs.google.com/spreadsheets/d/1PV8NqPZt0GEKVtEk2CcUX876l2qqEYwP5npbLAVk8L8/edit?usp=sharing' 
            url=url_file+'r//'+excel_name
            uploaded_file = pd.read_excel(io=url_file,  sheet_name =sheet_name)
