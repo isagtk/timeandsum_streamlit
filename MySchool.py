@@ -193,20 +193,24 @@ def main():
            st.write(url_file)
            #url_file='https://docs.google.com/spreadsheets/d/1PV8NqPZt0GEKVtEk2CcUX876l2qqEYwP5npbLAVk8L8/edit?usp=sharing' 
            url_file='https://docs.google.com/spreadsheets/d/1PV8NqPZt0GEKVtEk2CcUX876l2qqEYwP5npbLAVk8L8/edit#gid=2070559139'
-           uploaded_file = pd.read_html(url_file)
+           if  uploaded_file is not None:
+                uploaded_file = pd.read_html(url_file)
+                #st.dataframe(df)
+           else: 
     else:
            uploaded_file = st.file_uploader("Data for Analysis <<MYDF1.xlsx>>", type='xlsx', accept_multiple_files=False, key=None, help=None, on_change=None, args=None, kwargs=None, disabled=False, label_visibility="visible")
     
-    if uploaded_file is not None:
-           file_container2 = st.expander("The file must have: sheet <<Data>> and sheet <<Info>>. Check your uploaded .xlsx")
-           shows = pd.read_excel(uploaded_file)
-           uploaded_file.seek(0)
-           file_container2.write(shows)
-           stop_info2=1
+           if uploaded_file is not None:
+            
+                file_container2 = st.expander("The file must have: sheet <<Data>> and sheet <<Info>>. Check your uploaded .xlsx")
+                shows = pd.read_excel(uploaded_file)
+                uploaded_file.seek(0)
+                file_container2.write(shows)
+                stop_info2=1
 
-    else:
-           st.stop()
-           stop_info2=0    
+            else:
+                   st.stop()
+   
             
     ndf=MySchool()
     df=ndf.add_info(uploaded_file)
