@@ -188,11 +188,10 @@ def main():
     
     
     if page=='URL - in progress !!!':
-           url_file=st.text_input(label = "Please enter URL")
+           #url_file=st.text_input(label = "Please enter URL")
+           url='https://docs.google.com/spreadsheets/d/1PV8NqPZt0GEKVtEk2CcUX876l2qqEYwP5npbLAVk8L8/edit?usp=sharing' 
            st.write(url_file)
-           webbrowser.open_new_tab(url_file)
-           uploaded_file =pd.read_excel(url_file + '/Calendar 2023.xlsx') 
-
+           uploaded_file = urllib.request.urlopen(url_file).read() 
     else:
            uploaded_file = st.file_uploader("Data for Analysis <<MYDF1.xlsx>>", type='xlsx', accept_multiple_files=False, key=None, help=None, on_change=None, args=None, kwargs=None, disabled=False, label_visibility="visible")
     
