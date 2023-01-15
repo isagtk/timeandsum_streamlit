@@ -183,15 +183,18 @@ def main():
 
     #======================
     st.markdown("Upload data from")
-    page_radionames=['URL - in progress !!!', 'Local file']
+    page_radionames=['URL', 'Local file']
     page=st.radio('Input', page_radionames, index=1)
     
     
-    if page=='URL - in progress !!!':
-           #url_file=st.text_input(label = "Please enter URL")
-           url_file='https://docs.google.com/spreadsheets/d/1PV8NqPZt0GEKVtEk2CcUX876l2qqEYwP5npbLAVk8L8/edit?usp=sharing' 
+    if page=='URL':
+           url_file=st.text_input(label = "Please enter URL")
            st.write(url_file)
-           uploaded_file = pd.read_html(url_file)
+           excel_name=st.text_input(label = "Please enter Excel name")
+           sheet_name=st.text_input(label = "Data") 
+           #url_file='https://docs.google.com/spreadsheets/d/1PV8NqPZt0GEKVtEk2CcUX876l2qqEYwP5npbLAVk8L8/edit?usp=sharing' 
+           url=url_file+'r//'+excel_name
+           uploaded_file = pd.read_excel(io=url_file,  sheet_name =sheet_name)
     else:
            uploaded_file = st.file_uploader("Data for Analysis <<MYDF1.xlsx>>", type='xlsx', accept_multiple_files=False, key=None, help=None, on_change=None, args=None, kwargs=None, disabled=False, label_visibility="visible")
     
